@@ -1,5 +1,6 @@
 import { ResultsRow } from "./ResultsRow";
 
+import './ResultTable.css';
 
 export const ResultsTable = ({ data }) => {
   return (

@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='main'>
       <Header />
 
       <UserInput onCalculate={calculateHandler} />
@@ -43,7 +43,7 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      {yearlyData.length === 0 && <p>No investment calculated yet.</p>}
+      {yearlyData.length === 0 && <p style={{textAlign: 'center'}}>No investment calculated yet.</p>}
       {yearlyData.length > 0 && <ResultsTable data={yearlyData} />}
     </div>
   );

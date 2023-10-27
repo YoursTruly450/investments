@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import './UserInput.css';
+
 export const UserInput = ({ onCalculate }) => {
 
   const initialUserInput = {
