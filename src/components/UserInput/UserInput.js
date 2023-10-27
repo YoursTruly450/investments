@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const UserInput = () => {
+export const UserInput = ({ onCalculate }) => {
 
   const initialUserInput = {
     currentSavings: 10000,
@@ -13,6 +13,8 @@ export const UserInput = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    onCalculate(userInput);
+    resetHandler();
   };
 
   const resetHandler = () => {
