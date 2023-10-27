@@ -1,4 +1,7 @@
-export const ResultsTable = () => {
+import { ResultsRow } from "./ResultsRow";
+
+
+export const ResultsTable = ({ data }) => {
   return (
     <table className="result">
       <thead>
@@ -11,13 +14,7 @@ export const ResultsTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>YEAR NUMBER</td>
-          <td>TOTAL SAVINGS END OF YEAR</td>
-          <td>INTEREST GAINED IN YEAR</td>
-          <td>TOTAL INTEREST GAINED</td>
-          <td>TOTAL INVESTED CAPITAL</td>
-        </tr>
+        {data.map((row) => <ResultsRow key={row.year} row={row} />)}
       </tbody>
     </table>
   );

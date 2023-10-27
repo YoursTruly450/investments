@@ -27,7 +27,9 @@ function App() {
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
+        totalInterest: currentSavings - userInput.currentSavings - yearlyContribution * (i + 1),
         yearlyContribution: yearlyContribution,
+        investedCapital: userInput.currentSavings + yearlyContribution * (i + 1),
       });
     }
   }
@@ -41,7 +43,8 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      <ResultsTable results={yearlyData} />
+      {yearlyData.length === 0 && <p>No investment calculated yet.</p>}
+      {yearlyData.length > 0 && <ResultsTable data={yearlyData} />}
     </div>
   );
 }
